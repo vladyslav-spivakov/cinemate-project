@@ -1,0 +1,56 @@
+.main-header {
+    width: 100%;
+    position: sticky;
+    top:0;
+    height: 36px;
+    background-color: $color2;
+    color: $color1;
+}
+
+.logo-div {
+    font-size: 22px;
+    filter: drop-shadow(4px 4px 1px rgba(#000000, 0.2));
+    margin: 0 5px;
+}
+
+.nav-header {
+    @include main-block-width;
+    @include flex-row;
+    margin: auto;
+}
+
+.menu-header { 
+    @include flex-row;
+    align-items: flex-end;
+    gap: 10px;
+    margin-left: 10px;
+    
+    li {
+        list-style-type: none;
+        a {
+            all:unset;
+            cursor: pointer;
+            @include hover-color($color5);
+            transition: color 0.2s;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .main-header {
+        height: unset;
+        text-align: center;
+        margin: 0;
+    }
+    .nav-header {
+        @include flex-column;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .menu-header {
+        @include flex-column;
+        gap: 2px;
+    }
+}

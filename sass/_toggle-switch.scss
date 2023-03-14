@@ -1,0 +1,45 @@
+.toggle-switch {
+    
+    @include flex-row;
+    position: relative;
+    cursor: pointer;
+    max-width: max-content;
+    border-radius: 100px;
+    background-color: $color6;
+    color: $color1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    gap: 10px;
+    span {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+
+    input {
+        display: none;
+        &:checked {
+            +.left {
+                background-color: $color4;
+
+                box-shadow: inset 1px 1px 0.3rem $color6;
+                border-radius: 100px;
+            }
+        }
+
+        &:not(:checked) {
+            +.left{
+
+                +.right {
+                    background-color: $color2;
+                box-shadow: inset 1px 1px 0.3rem $color6;
+                }
+            }
+        }
+    }
+    .left, .right {
+        border-radius: 100px;
+        
+        transition: all 0.3s;
+    }
+}

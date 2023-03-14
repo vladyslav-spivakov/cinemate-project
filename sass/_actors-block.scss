@@ -1,0 +1,51 @@
+.actors-block {
+    max-width: 280px;
+    min-width: 250px;
+    margin-top: 50px;
+    margin-left: 10px;
+    .block-title {
+        color: $color2;
+        font-weight: 600;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    @media screen and (max-width:800px) {
+        max-width: unset;
+        min-width: unset;
+        margin-top: 10px;
+    }
+    @media screen and (min-width:801px) and (max-width:920px) {
+        max-width: unset;
+        min-width: unset;
+        margin-top: 50px;
+    }
+    
+}
+
+.actors {
+    margin: 10px 10px 0 10px;
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    .actor {
+        max-width: 100px;
+
+        img {
+            max-width: inherit;
+            aspect-ratio: 2/3;
+        }
+    }
+    
+    .actor-name {
+    color: $color0;
+
+        font-size: 1.1em;
+    }
+    .character-name {
+        color:$color3;
+        font-size: 0.8em;
+        text-overflow: ellipsis;
+    }
+}

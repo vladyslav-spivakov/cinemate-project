@@ -1,0 +1,135 @@
+
+
+.film-general {
+  @include flex-row;
+
+  .poster img {
+    @include poster-width(225px);
+  }
+
+  color: $color3;
+}
+
+.film-details {
+  @include flex-column;
+
+  margin-left: 10px;
+
+  .film-title-div {
+    @include flex-row;
+    align-items: center;
+  }
+
+  .film-title {
+    font-size: 1.9rem;
+    color: $color2;
+    font-weight: 600;
+  }
+  .film-tagline {
+    font-size: 1.1rem;
+  }
+
+  .film-subtitle-div {
+    @include flex-row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    align-items: center;
+  }
+
+  .separator {
+    margin: 5px 0px;
+
+    &.last {
+        margin-top: auto;
+        margin-bottom: 10px;
+    }
+  }
+
+  .description {
+    margin: 5px;
+  }
+}
+
+
+.film-genres {
+  @include flex-row;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+  margin-left: auto;
+  gap:3px;
+}
+
+.film-genre {
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 3px 5px;
+    color: $color6;
+
+    @include hover-opacity(1);
+    $transition-time: 0.2s;
+    transition: background-color $transition-time, opacity $transition-time;
+    @include parallelogram-bg($color3);
+
+    &::after {
+        transition: background-color $transition-time, opacity $transition-time;
+
+    }
+
+    &:hover::after {
+      background-color: $color2;
+    }
+}
+
+.film-field {
+    @include flex-row;
+
+    gap: 10px;
+    align-items: center;
+    font-size: 1.2rem;
+
+    .field-name {
+        min-width: 150px;
+        font-weight: 600;
+    }
+
+    .field-value {
+      font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width:800px) {
+
+    .film-general {
+      @include flex-column;
+
+      .poster {
+        align-self: center;
+        
+      }
+    }
+
+    .film-field {
+      justify-content: space-around;
+
+      .field-name {
+        min-width: unset;
+      }
+    }
+
+    #production {
+      flex-wrap: wrap;
+
+      .field-name {
+        display: none;
+      }
+    }
+
+    .film-details {
+      text-align: center;
+
+      .description {
+        text-align: start;
+      }
+    }
+}

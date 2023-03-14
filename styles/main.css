@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+div, p, a, link, ul, li, body, * {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body, * {
+  font-family: "Roboto Slab", serif;
+}
+
+img {
+  display: block;
+}
+
+.separator {
+  min-height: 0.5px;
+  max-height: 0.5px;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: #DE6E3A;
+}
+
+.main-block {
+  margin: auto;
+  max-width: min(1440px, 95vw);
+}
+
+.toggle-switch {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  cursor: pointer;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  border-radius: 100px;
+  background-color: #000000;
+  color: #F3EBE3;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px;
+  gap: 10px;
+}
+.toggle-switch span {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+.toggle-switch input {
+  display: none;
+}
+.toggle-switch input:checked + .left {
+  background-color: #C63720;
+  box-shadow: inset 1px 1px 0.3rem #000000;
+  border-radius: 100px;
+}
+.toggle-switch input:not(:checked) + .left + .right {
+  background-color: #DE6E3A;
+  box-shadow: inset 1px 1px 0.3rem #000000;
+}
+.toggle-switch .left, .toggle-switch .right {
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+
+.choice {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.choice-checkbox {
+  display: none;
+}
+.choice-checkbox ~ .choice-btn {
+  color: #A094AC;
+  transition: color 0.2s;
+}
+.choice-checkbox ~ .choice-btn::after {
+  transition: color 0.2s 0.1s, width 0.2s 0.1s;
+  content: "";
+  background-color: #A094AC;
+  display: block;
+  width: 0%;
+  margin: auto;
+  height: 3px;
+  position: relative;
+  top: 0;
+  transform: skew(-20deg);
+  z-index: -1;
+}
+.choice-checkbox ~ .choice-btn:hover::after {
+  width: 90%;
+}
+.choice-checkbox:checked ~ .choice-2 {
+  color: #F3EBE3;
+}
+.choice-checkbox:checked ~ .choice-2::after {
+  width: 90%;
+  background-color: #DE6E3A;
+}
+.choice-checkbox:not(:checked) ~ .choice-1 {
+  color: #F3EBE3;
+}
+.choice-checkbox:not(:checked) ~ .choice-1::after {
+  width: 90%;
+  background-color: #DE6E3A;
+}
+
+@media screen and (max-width: 400px) {
+  .choice {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.main-header {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 36px;
+  background-color: #DE6E3A;
+  color: #F3EBE3;
+}
+
+.logo-div {
+  font-size: 22px;
+  filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.2));
+  margin: 0 5px;
+}
+
+.nav-header {
+  max-width: min(1440px, 95vw);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  margin-left: 10px;
+}
+.menu-header li {
+  list-style-type: none;
+}
+.menu-header li a {
+  all: unset;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.menu-header li a:hover {
+  color: #292134;
+}
+
+@media screen and (max-width: 400px) {
+  .main-header {
+    height: unset;
+    text-align: center;
+    margin: 0;
+  }
+  .nav-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .menu-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+.horizontal-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  position: relative;
+  overflow-x: auto;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  padding: 5px 0;
+}
+.horizontal-list .list-element {
+  display: flex;
+  flex-direction: column;
+}
+.horizontal-list .list-element .title {
+  font-size: 1.05rem;
+  color: #F3EBE3;
+}
+.horizontal-list .list-element .subtitle {
+  font-size: 0.9rem;
+  color: #A094AC;
+}
+.horizontal-list::-webkit-scrollbar {
+  background: transparent;
+  max-height: 0.6rem;
+}
+.horizontal-list:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(222, 110, 58, 0.8);
+  border-radius: 20px;
+}
+.horizontal-list:hover::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.filmlist-block {
+  color: #F3EBE3;
+}
+.filmlist-block .poster {
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: border 0.2s 0.05s;
+  aspect-ratio: 2/3;
+  max-width: 170px;
+  position: relative;
+  cursor: pointer;
+}
+.filmlist-block .poster img {
+  aspect-ratio: inherit;
+  max-width: inherit;
+}
+.filmlist-block .poster .title, .filmlist-block .poster .subtitle {
+  position: absolute;
+  left: 50%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  z-index: 1;
+  text-align: center;
+  transition: all 0.2s 0.05s;
+}
+.filmlist-block .poster .title {
+  color: #F3EBE3;
+  top: 20%;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.filmlist-block .poster .subtitle {
+  color: #A094AC;
+  top: 80%;
+}
+.filmlist-block .poster img {
+  transition: filter 0.2s 0.05s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);
+}
+.filmlist-block .poster:hover {
+  border: 2px solid #F3EBE3;
+}
+.filmlist-block .poster:hover img {
+  filter: brightness(18%);
+}
+.filmlist-block .poster:hover .title, .filmlist-block .poster:hover .subtitle {
+  opacity: 1;
+}
+.filmlist-block .poster:hover .title {
+  top: calc(50% - 1rem);
+}
+.filmlist-block .poster:hover .subtitle {
+  top: calc(50% + 1rem);
+}
+.filmlist-block .horizontal-list {
+  margin: 10px;
+  height: 280px;
+}
+@media screen and (max-width: 480px) {
+  .filmlist-block .filmlist-title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.filmlist-title-div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 10px 0;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=main.css.map */

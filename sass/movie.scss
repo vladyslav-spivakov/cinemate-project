@@ -1,0 +1,18 @@
+@import 'global';
+@import 'film-general';
+@import 'nav-block';
+@import 'actors-block';
+
+.film-info-section {
+    max-width: 900px;
+}
+
+.main-block {
+    @include flex-row;
+    justify-content: center;
+
+    @media screen and (max-width: 800px) {
+        @include flex-column;
+        
+    }
+}

@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+div, p, a, link, ul, li, body, * {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body, * {
+  font-family: "Roboto Slab", serif;
+}
+
+img {
+  display: block;
+}
+
+.separator {
+  min-height: 0.5px;
+  max-height: 0.5px;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: #DE6E3A;
+}
+
+.main-block {
+  margin: auto;
+  max-width: min(1440px, 95vw);
+}
+
+.fullpage-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 1280px) {
+  .fullpage-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .fullpage-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 780px) {
+  .fullpage-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .fullpage-list {
+    grid-template-columns: 1fr;
+  }
+  .fullpage-list .list-element {
+    margin: auto;
+  }
+}
+
+#top-rated .poster {
+  aspect-ratio: 2/3;
+  max-width: 220px;
+}
+#top-rated .poster img {
+  aspect-ratio: inherit;
+  max-width: inherit;
+}
+
+.filmlist-pages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  transform: translate(-50%, 0%);
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+}
+.filmlist-pages input {
+  all: unset;
+  background: #A094AC;
+  color: #292134;
+  width: 3rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.filmlist-pages .filmlist-page-btn {
+  line-height: 1rem;
+  font-size: 2rem;
+}/*# sourceMappingURL=top-rated.css.map */

@@ -1,0 +1,69 @@
+@import 'global';
+@import 'searcher';
+
+$search-results-border-radius: $searcher-border-radius;
+
+
+
+
+.search-results {
+    @include flex-column;
+    margin: 10px 0;
+    gap: 20px;
+    .list-element {
+        @include flex-row;
+        background-color: rgba($color3,0.4);
+        border-radius: $search-results-border-radius;
+        max-height: min-content;
+        @include box-shadow-1;
+    }
+
+    .poster {
+        border-radius: inherit;
+        align-self: center;
+        img {
+            @include poster-width(120px);
+            border-radius: inherit;
+            
+        }
+    }
+
+    .details {
+        @include flex-column;
+        margin-left: 5px;
+        min-height: 100%;
+    }
+
+    .title {
+        justify-self: flex-start;
+        font-size: 1.5rem;
+    }
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    .description {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+        
+    @media screen and (max-width:800px) {
+        .poster img{
+            max-width: 100px;
+        }
+        .details {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .title {
+            font-size: 1.6rem;
+
+        }
+        .subtitle {
+            font-size: 1rem;
+        }
+        .description {
+            display: none;
+        }
+    }
+}
+

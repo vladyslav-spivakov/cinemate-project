@@ -1,9 +1,6 @@
-@import 'global';
-
-
+@import "global";
 
 .main-bg {
-    @include fixed-bg;
-    background-color: $color5;
-
+  @include fixed-bg;
+  background-color: $color5;
 }

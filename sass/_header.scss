@@ -1,62 +1,76 @@
 .main-header {
-    width: 100%;
-    position: sticky;
-    top:0;
-    height: 36px;
-    background-color: $color2;
-    color: $color1;
+  position: sticky;
+  top: 0;
+  height: $header-height;
+  background-color: $color2;
+  color: $color1;
+  z-index: 100;
+  box-shadow: 0px 10px 10px rgba(#000000, 0.2);
 }
 
 .logo-div {
-    font-size: 22px;
-    filter: drop-shadow(4px 4px 1px rgba(#000000, 0.2));
-    margin: 0 5px;
+  font-size: 22px;
+  filter: drop-shadow(4px 4px 1px rgba(#000000, 0.2));
+  margin: 0 5px;
+  a {
+    all: unset;
+    cursor: pointer;
+  }
+  &::after {
+    font-size: 0.9rem;
+    content: ".UA \ \ Фільмів - багато, сайт - один";
+    white-space: pre;
+    @media screen and (max-width: 600px) {
+      content: ".UA";
+    }
+  }
 }
 
 .nav-header {
-    @include main-block-width;
-    @include flex-row;
-    margin: auto;
+  @include main-block-width;
+  @include flex-row;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
 }
 
-.menu-header { 
-    @include flex-row;
-    align-items: flex-end;
-    gap: 10px;
-    margin-left: 10px;
-    
+.menu-header {
+  @include flex-row;
+  align-items: flex-end;
+  gap: 30px;
+  margin-left: 10px;
+
+  li {
+    list-style-type: none;
+    a {
+      all: unset;
+      cursor: pointer;
+      @include hover-color($color5);
+      transition: color 0.2s;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main-header {
+    height: unset;
+    text-align: center;
+    margin: 0;
+  }
+  .nav-header {
+    @include flex-column;
+    align-items: center;
+    max-width: unset;
+    margin: 0;
+  }
+
+  .menu-header {
+    margin: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     li {
-        list-style-type: none;
-        a {
-            all:unset;
-            cursor: pointer;
-            @include hover-color($color5);
-            transition: color 0.2s;
-        }
+      font-size: 20px;
     }
-    
-}
-
-@media screen and (max-width: 400px) {
-    .main-header {
-        height: unset;
-        text-align: center;
-        margin: 0;
-    }
-    .nav-header {
-        @include flex-column;
-        align-items: center;
-        max-width: unset;
-        margin: 0;
-    }
-    
-    .menu-header {
-        margin: unset;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        li {
-            font-size: 20px;
-        }
-    }
+  }
 }

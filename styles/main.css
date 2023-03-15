@@ -1,12 +1,30 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-html, div, p, a, link, ul, li, body, * {
+html,
+div,
+p,
+a,
+link,
+ul,
+li,
+body,
+* {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -17,7 +35,8 @@ footer, header, hgroup, menu, nav, section {
           user-select: none;
 }
 
-body, * {
+body,
+* {
   font-family: "Roboto Slab", serif;
 }
 
@@ -29,6 +48,10 @@ img {
   display: block;
 }
 
+a {
+  all: unset;
+}
+
 .separator {
   min-height: 0.5px;
   max-height: 0.5px;
@@ -38,8 +61,14 @@ img {
   background-color: #DE6E3A;
 }
 
+.overflow-block {
+  overflow: auto;
+  width: 100vw;
+  max-height: calc(100vh - 30px);
+}
+
 .main-block {
-  margin: auto;
+  margin: 20px auto 0 auto;
   max-width: min(1440px, 95vw);
 }
 
@@ -148,13 +177,14 @@ img {
   }
 }
 .main-header {
-  width: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 36px;
+  height: 30px;
   background-color: #DE6E3A;
   color: #F3EBE3;
+  z-index: 100;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo-div {
@@ -162,19 +192,35 @@ img {
   filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.2));
   margin: 0 5px;
 }
+.logo-div a {
+  all: unset;
+  cursor: pointer;
+}
+.logo-div::after {
+  font-size: 0.9rem;
+  content: ".UA   Фільмів - багато, сайт - один";
+  white-space: pre;
+}
+@media screen and (max-width: 600px) {
+  .logo-div::after {
+    content: ".UA";
+  }
+}
 
 .nav-header {
   max-width: min(1440px, 95vw);
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin: auto;
+  align-items: center;
 }
 
 .menu-header {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap: 10px;
+  gap: 30px;
   margin-left: 10px;
 }
 .menu-header li {
@@ -189,7 +235,7 @@ img {
   color: #292134;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .main-header {
     height: unset;
     text-align: center;
@@ -275,7 +321,8 @@ img {
   aspect-ratio: inherit;
   max-width: inherit;
 }
-.filmlist-block .poster .title, .filmlist-block .poster .subtitle {
+.filmlist-block .poster .title,
+.filmlist-block .poster .subtitle {
   position: absolute;
   left: 50%;
   width: -webkit-max-content;
@@ -308,7 +355,8 @@ img {
 .filmlist-block .poster:hover img {
   filter: brightness(18%);
 }
-.filmlist-block .poster:hover .title, .filmlist-block .poster:hover .subtitle {
+.filmlist-block .poster:hover .title,
+.filmlist-block .poster:hover .subtitle {
   opacity: 1;
 }
 .filmlist-block .poster:hover .title {

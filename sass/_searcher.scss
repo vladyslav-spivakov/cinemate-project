@@ -1,94 +1,86 @@
-
-
 $searcher-border-radius: 8px;
 $searcher-height: 36px;
 $searcher-padding-left: 5px;
 $transition-time: 0.2s;
 
-
 @mixin show-div {
-    pointer-events: all;
-    opacity: 1;
+  pointer-events: all;
+  opacity: 1;
 }
 
 @mixin hide-div {
-    pointer-events: none;
-    opacity: 0;
+  pointer-events: none;
+  opacity: 0;
 }
-.search-block{
+.search-block {
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+
+  .searcher {
+    width: 100%;
+  }
+
+  .autocomplete-div {
+    margin-top: 3px;
+    position: absolute;
+    top: $searcher-height;
+    width: inherit;
+    background-color: $color1;
+    border-radius: $searcher-border-radius;
+    @include hide-div;
+    transition: background-color $transition-time, opacity $transition-time;
+  }
+
+  .autocomplete-option {
     @include flex-row;
     align-items: center;
-    // gap: 20px;
-    justify-content: space-between;
-    cursor: pointer;
-    position: relative;
-    
-    .searcher {
-        width: 100%;
-    }
-    
-    .autocomplete-div {
-        margin-top: 3px;
-        position: absolute;
-        top:$searcher-height;
-        width: inherit;
-        background-color: $color1;
-        border-radius: $searcher-border-radius;
-        @include hide-div;
-        transition:  background-color $transition-time, opacity $transition-time;
-    }
+    gap: 10px;
+    padding: 5px;
+    padding-left: 5px + $searcher-padding-left;
 
-    .autocomplete-option {
-        @include flex-row;
-        align-items: center;
-        gap: 10px;
-        padding:5px;
-        padding-left: 5px + $searcher-padding-left;
-        
-        border-radius: inherit;
-        @include hover-background($color0);
+    border-radius: inherit;
+    @include hover-background($color0);
+  }
 
-        
-    }
-
-    .additional-info {
-        font-size: 0.8rem;
-        opacity: 0.8;
-    }
+  .additional-info {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
 }
 .search-input {
-    all:unset;
-    height: $searcher-height;
-    width: inherit;
-    padding-left: $searcher-padding-left;
-    background-color: $color3;
-    border-radius: $searcher-border-radius;
+  all: unset;
+  height: $searcher-height;
+  width: inherit;
+  padding-left: $searcher-padding-left;
+  background-color: $color3;
+  border-radius: $searcher-border-radius;
 
-    &::placeholder {
-        color: $color5;
+  &::placeholder {
+    color: $color5;
+  }
+
+  &:focus {
+    ~ .autocomplete-div {
+      @include show-div;
     }
-
-    &:focus {
-        ~.autocomplete-div {
-            @include show-div;
-        }
-     }
-     &:placeholder-shown~.autocomplete-div {
-        @include hide-div;
-     }
+  }
+  &:placeholder-shown ~ .autocomplete-div {
+    @include hide-div;
+  }
 }
 
-
 .search-btn {
-    all:unset;
-    margin-left: 10px;
-    background-color: $color2;
-    height: $searcher-height;
-    padding: 0 5px;
-    border-radius: $searcher-border-radius;
-    opacity: 0.8;
-    display: block;
-    @include hover-opacity(1);
-    transition: opacity $transition-time;
-
+  all: unset;
+  margin-left: 10px;
+  background-color: $color2;
+  height: $searcher-height;
+  padding: 0 5px;
+  border-radius: $searcher-border-radius;
+  opacity: 0.8;
+  display: block;
+  @include hover-opacity(1);
+  transition: opacity $transition-time;
 }

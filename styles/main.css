@@ -198,7 +198,7 @@ a {
 }
 .logo-div::after {
   font-size: 0.9rem;
-  content: ".UA   Фільмів - багато, сайт - один";
+  content: ".UA     Фільмів - багато, сайт - один";
   white-space: pre;
 }
 @media screen and (max-width: 600px) {

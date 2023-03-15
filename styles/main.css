@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-div, p, a, link, ul, li, body, * {
+html, div, p, a, link, ul, li, body, * {
   padding: 0;
   margin: 0;
+  border: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 * {
@@ -13,6 +19,10 @@ div, p, a, link, ul, li, body, * {
 
 body, * {
   font-family: "Roboto Slab", serif;
+}
+
+body {
+  min-width: 100%;
 }
 
 img {
@@ -31,6 +41,21 @@ img {
 .main-block {
   margin: auto;
   max-width: min(1440px, 95vw);
+}
+
+::-webkit-scrollbar {
+  background: #292134;
+  max-width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #DE6E3A;
+  border-radius: 10px;
 }
 
 .toggle-switch {
@@ -174,12 +199,16 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: unset;
     margin: 0;
   }
   .menu-header {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    margin: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .menu-header li {
+    font-size: 20px;
   }
 }
 .horizontal-list {
@@ -209,13 +238,25 @@ img {
   background: transparent;
   max-height: 0.6rem;
 }
-.horizontal-list:hover::-webkit-scrollbar-thumb {
-  background-color: rgba(222, 110, 58, 0.8);
+.horizontal-list::-webkit-scrollbar-thumb, .horizontal-list::-webkit-scrollbar-track {
+  background-color: transparent;
   border-radius: 20px;
 }
-.horizontal-list:hover::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+@media (hover: none) {
+  .horizontal-list::-webkit-scrollbar-thumb {
+    background-color: rgba(222, 110, 58, 0.8);
+  }
+  .horizontal-list::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@media (hover: hover) {
+  .horizontal-list:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(222, 110, 58, 0.8);
+  }
+  .horizontal-list:hover::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 .filmlist-block {

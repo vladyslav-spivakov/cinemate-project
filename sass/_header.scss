@@ -46,11 +46,17 @@
     .nav-header {
         @include flex-column;
         align-items: center;
+        max-width: unset;
         margin: 0;
     }
     
     .menu-header {
-        @include flex-column;
-        gap: 2px;
+        margin: unset;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        li {
+            font-size: 20px;
+        }
     }
 }

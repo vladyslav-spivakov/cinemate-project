@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-div, p, a, link, ul, li, body, * {
+html, div, p, a, link, ul, li, body, * {
   padding: 0;
   margin: 0;
+  border: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 * {
@@ -13,6 +19,10 @@ div, p, a, link, ul, li, body, * {
 
 body, * {
   font-family: "Roboto Slab", serif;
+}
+
+body {
+  min-width: 100%;
 }
 
 img {
@@ -31,6 +41,21 @@ img {
 .main-block {
   margin: auto;
   max-width: min(1440px, 95vw);
+}
+
+::-webkit-scrollbar {
+  background: #292134;
+  max-width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #DE6E3A;
+  border-radius: 10px;
 }
 
 .fullpage-list {

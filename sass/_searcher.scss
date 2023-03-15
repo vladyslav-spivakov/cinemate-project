@@ -1,6 +1,6 @@
 
 
-$searcher-border-radius: 2px;
+$searcher-border-radius: 8px;
 $searcher-height: 36px;
 $searcher-padding-left: 5px;
 $transition-time: 0.2s;
@@ -56,13 +56,11 @@ $transition-time: 0.2s;
         opacity: 0.8;
     }
 }
-
 .search-input {
     all:unset;
-    width: 100%;
     height: $searcher-height;
-
-    // padding-left: $searcher-padding-left;
+    width: inherit;
+    padding-left: $searcher-padding-left;
     background-color: $color3;
     border-radius: $searcher-border-radius;
 
@@ -83,10 +81,9 @@ $transition-time: 0.2s;
 
 .search-btn {
     all:unset;
-    position: absolute;
-    right: 5px;
+    margin-left: 10px;
     background-color: $color2;
-    height: $searcher-height - 5px;
+    height: $searcher-height;
     padding: 0 5px;
     border-radius: $searcher-border-radius;
     opacity: 0.8;

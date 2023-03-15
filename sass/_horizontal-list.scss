@@ -1,4 +1,5 @@
 
+
 .horizontal-list {
     @include flex-row;
     gap: 20px;
@@ -28,16 +29,21 @@
 
     }
 
-    &:hover {
+    &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track{
+        background-color: transparent;
+        border-radius: $border-radius;
+    }
 
-        &::-webkit-scrollbar-thumb{
-            background-color: rgba($color: $color2, $alpha: 0.8);
-            border-radius: $border-radius;
+    
+    @media (hover:none) {
+        @include show-scrollbar;
+    }
+    @media (hover:hover) {
+        &:hover {
+
+            @include show-scrollbar;
         }
-        &::-webkit-scrollbar-track{
-            background-color: rgba($color: $color6, $alpha: 0.2);
-            border-radius: $border-radius;
-        }
+    
     }
 
     

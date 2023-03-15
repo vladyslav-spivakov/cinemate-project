@@ -1,7 +1,31 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-div, p, a, link, ul, li, body, * {
+html,
+div,
+p,
+a,
+link,
+ul,
+li,
+body,
+* {
   padding: 0;
   margin: 0;
+  border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 * {
@@ -11,12 +35,21 @@ div, p, a, link, ul, li, body, * {
           user-select: none;
 }
 
-body, * {
+body,
+* {
   font-family: "Roboto Slab", serif;
+}
+
+body {
+  min-width: 100%;
 }
 
 img {
   display: block;
+}
+
+a {
+  all: unset;
 }
 
 .separator {
@@ -28,9 +61,30 @@ img {
   background-color: #DE6E3A;
 }
 
+.overflow-block {
+  overflow: auto;
+  width: 100vw;
+  max-height: calc(100vh - 30px);
+}
+
 .main-block {
-  margin: auto;
+  margin: 20px auto 0 auto;
   max-width: min(1440px, 95vw);
+}
+
+::-webkit-scrollbar {
+  background: #292134;
+  max-width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #DE6E3A;
+  border-radius: 10px;
 }
 
 .film-general {
@@ -266,6 +320,87 @@ img {
   text-overflow: ellipsis;
 }
 
+.main-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 30px;
+  background-color: #DE6E3A;
+  color: #F3EBE3;
+  z-index: 100;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-div {
+  font-size: 22px;
+  filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.2));
+  margin: 0 5px;
+}
+.logo-div a {
+  all: unset;
+  cursor: pointer;
+}
+.logo-div::after {
+  font-size: 0.9rem;
+  content: ".UA     Фільмів - багато, сайт - один";
+  white-space: pre;
+}
+@media screen and (max-width: 600px) {
+  .logo-div::after {
+    content: ".UA";
+  }
+}
+
+.nav-header {
+  max-width: min(1440px, 95vw);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 30px;
+  margin-left: 10px;
+}
+.menu-header li {
+  list-style-type: none;
+}
+.menu-header li a {
+  all: unset;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.menu-header li a:hover {
+  color: #292134;
+}
+
+@media screen and (max-width: 450px) {
+  .main-header {
+    height: unset;
+    text-align: center;
+    margin: 0;
+  }
+  .nav-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: unset;
+    margin: 0;
+  }
+  .menu-header {
+    margin: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .menu-header li {
+    font-size: 20px;
+  }
+}
 .film-info-section {
   max-width: 900px;
 }

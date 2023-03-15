@@ -1,41 +1,35 @@
-
 .film-info-nav {
+  @include flex-row;
+  flex-wrap: wrap;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 10px;
+  text-transform: capitalize;
+  color: $color3;
+  justify-content: space-between;
+  $transition-time: 0.4s 0.1s;
+  transition: color $transition-time;
 
-
+  @media screen and (max-width: 425px) {
     @include flex-row;
-    flex-wrap: wrap;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 10px;
-    text-transform: capitalize;
-    color: $color3;
-    justify-content: space-between;
-    $transition-time: 0.4s 0.1s;
+    row-gap: 20px;
+    justify-content: space-around;
+
+    align-items: center;
+    .nav-option {
+      padding: 0 30px;
+    }
+  }
+  .nav-option {
+    @include hover-color($color4);
     transition: color $transition-time;
 
-    @media screen and (max-width:425px) {
-        @include flex-row;
-        row-gap: 20px;
-        justify-content: space-around;
-        
-        align-items: center ;
-        .nav-option {
-            padding: 0 30px;
+    @include hover-underscore($color4);
+  }
 
-        }
+  &:hover {
+    .nav-option:not(:hover) {
+      color: white;
     }
-    .nav-option {
-        @include hover-color($color4);
-        transition: color $transition-time;
-
-        @include hover-underscore($color4);
-        
-    }
-
-    &:hover {
-        .nav-option:not(:hover) {
-            color: white;
-            
-        }
-    }
+  }
 }

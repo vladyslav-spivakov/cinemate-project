@@ -1,42 +1,38 @@
-
 .choice {
-    @include flex-row;
-    gap: 30px;
-    cursor: pointer;
+  @include flex-row;
+  gap: 30px;
+  cursor: pointer;
 }
-
-
 
 .choice-checkbox {
-    $color-choice: $color1;
-    $transition-time: 0.2s;
-    display: none;
-    ~.choice-btn {
-        color: $color3;
-        transition: color $transition-time;
+  $color-choice: $color1;
+  $transition-time: 0.2s;
+  display: none;
+  ~ .choice-btn {
+    color: $color3;
+    transition: color $transition-time;
 
-        @include hover-underscore($color3);
-    }
+    @include hover-underscore($color3);
+  }
 
-    &:checked {
-        ~.choice-2 {
-            @include hover-underscore-show($color2);
-            color: $color-choice;
-        }
+  &:checked {
+    ~ .choice-2 {
+      @include hover-underscore-show($color2);
+      color: $color-choice;
     }
+  }
 
-    &:not(:checked) {
-        ~.choice-1 {
-            @include hover-underscore-show($color2);
-            color: $color-choice;
-        }
+  &:not(:checked) {
+    ~ .choice-1 {
+      @include hover-underscore-show($color2);
+      color: $color-choice;
     }
+  }
 }
 
-
 @media screen and (max-width: 400px) {
-    .choice {
-        @include flex-column;
-        text-align: center;
-    }
+  .choice {
+    @include flex-column;
+    text-align: center;
+  }
 }

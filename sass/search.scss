@@ -1,69 +1,68 @@
-@import 'global';
-@import 'searcher';
-
+@import "global";
+@import "searcher";
+@import "header";
 $search-results-border-radius: $searcher-border-radius;
 
-
-
-
 .search-results {
+  @include flex-column;
+  margin: 20px 0;
+  gap: 15px;
+  .list-element {
+    @include flex-row;
+    background-color: rgba($color3, 0.4);
+    border-radius: $search-results-border-radius;
+    max-height: min-content;
+    @include box-shadow-1;
+  }
+
+  .poster {
+    border-radius: inherit;
+    align-self: center;
+    img {
+      @include poster-width(120px);
+      border-radius: inherit;
+    }
+  }
+
+  .details {
     @include flex-column;
-    margin: 10px 0;
-    gap: 20px;
-    .list-element {
-        @include flex-row;
-        background-color: rgba($color3,0.4);
-        border-radius: $search-results-border-radius;
-        max-height: min-content;
-        @include box-shadow-1;
-    }
+    margin-left: 5px;
+    min-height: 100%;
+  }
 
-    .poster {
-        border-radius: inherit;
-        align-self: center;
-        img {
-            @include poster-width(120px);
-            border-radius: inherit;
-            
-        }
-    }
+  .title {
+    justify-self: flex-start;
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+  .description {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 
+  @media screen and (max-width: 800px) {
+    .poster img {
+      max-width: 100px;
+    }
     .details {
-        @include flex-column;
-        margin-left: 5px;
-        min-height: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
     }
-
     .title {
-        justify-self: flex-start;
-        font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     .subtitle {
-        font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .description {
-        margin-top: auto;
-        margin-bottom: auto;
+      font-size: 0.7rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
     }
-        
-    @media screen and (max-width:800px) {
-        .poster img{
-            max-width: 100px;
-        }
-        .details {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-        .title {
-            font-size: 1.6rem;
-
-        }
-        .subtitle {
-            font-size: 1rem;
-        }
-        .description {
-            display: none;
-        }
-    }
+  }
 }
-

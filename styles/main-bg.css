@@ -60,12 +60,6 @@ a {
   background-color: #DE6E3A;
 }
 
-.overflow-block {
-  overflow: auto;
-  width: 100vw;
-  max-height: calc(100vh - 30px);
-}
-
 .main-block {
   margin: 20px auto 0 auto;
   max-width: min(1440px, 95vw);

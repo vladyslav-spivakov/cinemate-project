@@ -178,12 +178,6 @@ a {
   background-color: $color2;
 }
 
-.overflow-block {
-  overflow: auto;
-  width: 100vw;
-  max-height: calc(100vh - $header-height);
-}
-
 .main-block {
   margin: $main-block-top-margin auto 0 auto;
   @include main-block-width;

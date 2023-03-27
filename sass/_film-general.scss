@@ -2,6 +2,7 @@
 
 .film-general {
   @include flex-row;
+  align-items: center;
 
   .poster img {
     @include poster-width(225px);
@@ -12,7 +13,7 @@
 
 .film-details {
   @include flex-column;
-
+  flex-grow: 1;
   margin-left: 10px;
 
   .film-title-div {
@@ -37,7 +38,20 @@
   }
 
   .separator {
-    margin: 5px 0px;
+    margin: 15px 0px;
+    position: relative;
+
+    p {
+      position: absolute;
+      top:0;
+      transform: translate(0%, -60%);
+      background-color: $color5;
+      color: rgba($color: $color2, $alpha: 0.8);
+      left: 10px;
+      font-weight: 500;
+      font-size: 1.05rem;
+      line-height: 1rem;
+    }
 
     &.last {
         margin-top: auto;
@@ -48,6 +62,8 @@
   .description {
     margin: 5px;
   }
+
+  
 }
 
 
@@ -56,35 +72,36 @@
   flex-wrap:wrap;
   justify-content: flex-end;
   margin-left: auto;
+  margin-right: 5px;
   gap:3px;
 }
 
 .film-genre {
     cursor: pointer;
-    opacity: 0.5;
     padding: 3px 5px;
-    color: $color6;
+    color: $color1;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
-    @include hover-opacity(1);
     $transition-time: 0.2s;
     transition: background-color $transition-time, opacity $transition-time;
-    @include parallelogram-bg($color3);
+    @include parallelogram-bg(rgba($color4,0.2));
 
     &::after {
         transition: background-color $transition-time, opacity $transition-time;
 
     }
 
-    &:hover::after {
-      background-color: $color2;
-    }
+    // &:hover::after {
+    //   background-color: $color2;
+    // }
 }
 
 .film-field {
     @include flex-row;
-
+    margin: 0;
     gap: 10px;
     align-items: center;
+    justify-content: space-around;
     font-size: 1.2rem;
 
     .field-name {
@@ -94,6 +111,7 @@
 
     .field-value {
       font-size: 1rem;
+      text-align: center;
     }
 }
 
@@ -122,6 +140,7 @@
 
       .field-name {
         display: none;
+        margin: 0 auto;
       }
     }
 

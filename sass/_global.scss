@@ -40,7 +40,7 @@ $main-block-top-margin: 20px;
     display: block;
     min-width: 100%;
     min-height: 100%;
-    padding: 0px 2px;
+    padding: 0px 4px;
     top: -100%;
     left: 50%;
     z-index: -1;
@@ -104,10 +104,11 @@ $main-block-top-margin: 20px;
 @mixin poster-width($width) {
   aspect-ratio: 2/3;
   max-width: $width;
-
+  min-width: $width;
   img {
     aspect-ratio: inherit;
     max-width: inherit;
+    min-width: inherit;
   }
 }
 
@@ -170,7 +171,7 @@ a {
 }
 
 .main-block {
-  margin: $main-block-top-margin auto 0 auto;
+  margin: $main-block-top-margin auto 10px auto;
   @include main-block-width;
 }
 
@@ -196,5 +197,169 @@ $border-radius: 10px;
   }
   &::-webkit-scrollbar-track {
     background-color: rgba($color: $color6, $alpha: 0.2);
+  }
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.global-loader {
+  position: fixed;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color5;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  &.loading {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.loader {
+  $size: 60px;
+  border: 8px solid $color3; 
+  border-top: 8px solid $color2; 
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  &.loading {
+    animation: spin 2s linear infinite;
+  }
+}
+$poster-width: 170px;
+$border-radius: 10px;
+$border-width: 2px;
+.filmlist-block {
+  color: $color1;
+  $transition-time: 0.2s 0.05s;
+
+  .poster {
+
+    border-radius: $border-radius;
+    border: $border-width solid transparent;
+    transition: border $transition-time;
+    @include poster-width($poster-width);
+    position: relative;
+
+    cursor: pointer;
+    .title,
+    .subtitle {
+      max-width: inherit;
+      position: absolute;
+      left: 50%;
+      width: max-content;
+      opacity: 0;
+      z-index: 1;
+      text-align: center;
+      max-width: 98%;
+      transition: all $transition-time;
+    }
+
+    .title {
+      transform: translate(-50%, -100%);
+      color: $color1;
+      top: 20%;
+      font-size: 0.9rem;
+      font-weight: 600;
+      pointer-events: none;
+    }
+    .subtitle {
+      transform: translate(-50%, 0%);
+      color: $color3;
+      font-size: 0.8rem;
+      top: 80%;
+    }
+
+    img {
+      transition: filter $transition-time;
+      border-radius: $border-radius;
+      @include box-shadow-1;
+    }
+
+    &:hover {
+      border: $border-width solid $color1;
+
+      img {
+        filter: brightness(18%);
+      }
+      .title,
+      .subtitle {
+        opacity: 1;
+      }
+
+      .title,
+      .subtitle {
+        pointer-events: all;
+        top: 49%;
+      }
+    }
+  }
+
+  .horizontal-list {
+    border-radius: $border-radius;
+    margin: 10px;
+    height: 280px;
+  }
+
+  @media screen and (max-width: 480px) {
+    .filmlist-title-div {
+      @include flex-column;
+      align-items: center;
+    }
+  }
+}
+
+.filmlist-title-div {
+  @include flex-row;
+  gap: 10px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 10px 0;
+  text-shadow: 3px 3px 3px rgba($color: #000000, $alpha: 0.2);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.horizontal-wrapper {
+  border-radius: $border-radius;
+  position: relative;
+  display: flex;
+  &::after, &::before {
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    min-height: $poster-width * 3 / 2 + 10px;
+    width: 50px;
+    top:10px;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    
+  }
+
+  &::after {
+    background: linear-gradient(to right, transparent, $color5);
+    right: 0;
+  }
+  &::before {
+    background: linear-gradient(to left, transparent, $color5);
+    left: 0;
   }
 }

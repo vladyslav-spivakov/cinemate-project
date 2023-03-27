@@ -53,7 +53,7 @@ $transition-time: 0.2s;
 .search-input {
   all: unset;
   height: $searcher-height;
-  width: inherit;
+  width: 100%;
   padding-left: $searcher-padding-left;
   background-color: $color3;
   border-radius: $searcher-border-radius;

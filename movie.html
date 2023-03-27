@@ -7,7 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/movie.css" />
   </head>
-  <body>
+  <body class="preload">
+    <div class="global-loader loading">
+      <div class="loader loading"></div>
+    </div>
     <header class="main-header">
       <div class="nav-header">
         <div class="logo-div">
@@ -22,70 +25,53 @@
       <div class="main-block">
         <div class="film-info-section">
           <div class="film-info-burger"></div>
-          <div class="film-info-nav">
+          <!-- <div class="film-info-nav">
             <div class="nav-option">Деталі</div>
-            <div class="nav-option">Титри</div>
             <div class="nav-option">Відео</div>
             <div class="nav-option">Зображення</div>
-          </div>
+          </div> -->
 
           <div class="film-info-block">
             <div class="film-general">
               <div class="poster">
-                <img src="img/poster.jpg" alt="" />
+                <img src="img/poster.jpg" alt="" id="film-poster"/>
               </div>
               <div class="film-details">
                 <div class="film-title-div">
-                  <p class="film-title">The silence of the lambs</p>
+                  <p class="film-title">Loading</p>
                   <p class="rating"></p>
                 </div>
                 <div class="film-subtitle-div">
-                  <p class="film-tagline">Some tagline to movie</p>
+                  <p class="film-tagline">Loading</p>
 
                   <div class="film-genres">
-                    <div class="film-genre">
-                      <p class="genre-name">Action</p>
-                    </div>
-                    <div class="film-genre">
-                      <p class="genre-name">Action</p>
-                    </div>
-                    <div class="film-genre">
-                      <p class="genre-name">Action</p>
-                    </div>
-                    <div class="film-genre">
-                      <p class="genre-name">Drama</p>
-                    </div>
+                    
                   </div>
                 </div>
-                <div class="separator"></div>
+                <div class="separator" id="production-sep"><p>Production</p></div>
                 <div class="film-field" id="production">
-                  <p class="field-name">Production</p>
-                  <p class="field-value">Live Production</p>
-                  <p class="field-value">Dog Eat Production</p>
-                  <p class="field-value">Dog Eat Production</p>
+                  <p class="field-value">Loading</p>
                 </div>
-                <div class="separator" id="budget"></div>
-                <div class="film-field">
-                  <p class="field-name">Budget</p>
-                  <p class="field-value">1.2 million $</p>
+                <div class="separator" id="budget-sep"><p>Budget</p></div>
+                <div class="film-field" id="budget">
+                  <p class="field-value">Loading</p>
                 </div>
-                <div class="separator" id="revenue"></div>
-                <div class="film-field">
-                  <p class="field-name">Revenue</p>
-                  <p class="field-value">2.8 million $</p>
+                <div class="separator" id="revenue-sep"><p>Revenue</p></div>
+                <div class="film-field" id="revenue">
+                  <p class="field-value">Loading</p>
                 </div>
-                <div class="separator"></div>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                <div class="separator"><p>Description</p></div>
+                <p class="description" id="description">
                 </p>
                 <div class="separator last"></div>
+              </div>
+            </div>
+            <div class="film-similar filmlist-block" id="similar">
+              <p class="filmlist-title-div" id="similar-title-div">Схожі</p>
+              <div class="horizontal-wrapper">
+                <div class="horizontal-list" id="similar-list">
+
+                </div>
               </div>
             </div>
           </div>
@@ -93,44 +79,9 @@
         <div class="actors-block">
           <p class="block-title">Actors</p>
           <div class="actors">
-            <div class="actor">
-              <img
-                src="https://image.tmdb.org/t/p/original/c1KlwOAlnFhBWfcPIvA6hmrElb6.jpg"
-                alt=""
-                class="actor-profile"
-              />
-              <p class="actor-name">Harvey Keitel</p>
-              <p class="character-name">Mr. White / Larry Dimmick</p>
-            </div>
-            <div class="actor">
-              <img
-                src="https://image.tmdb.org/t/p/original/c1KlwOAlnFhBWfcPIvA6hmrElb6.jpg"
-                alt=""
-                class="actor-profile"
-              />
-              <p class="actor-name">Tim Roth</p>
-              <p class="character-name">Mr. White / Larry Dimmick</p>
-            </div>
-            <div class="actor">
-              <img
-                src="https://image.tmdb.org/t/p/original/c1KlwOAlnFhBWfcPIvA6hmrElb6.jpg"
-                alt=""
-                class="actor-profile"
-              />
-              <p class="actor-name">Tim Roth</p>
-              <p class="character-name">Mr. White / Larry Dimmick</p>
-            </div>
-            <div class="actor">
-              <img
-                src="https://image.tmdb.org/t/p/original/c1KlwOAlnFhBWfcPIvA6hmrElb6.jpg"
-                alt=""
-                class="actor-profile"
-              />
-              <p class="actor-name">Tim Roth</p>
-              <p class="character-name">Mr. White / Larry Dimmick</p>
-            </div>
           </div>
         </div>
       </div>
+    <script type="module" src="./js/movie.js" ></script>
   </body>
 </html>

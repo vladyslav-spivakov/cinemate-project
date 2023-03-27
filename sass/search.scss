@@ -13,6 +13,8 @@ $search-results-border-radius: $searcher-border-radius;
     border-radius: $search-results-border-radius;
     max-height: min-content;
     @include box-shadow-1;
+    cursor: pointer;
+    @include hover-background(rgba($color2,0.4));
   }
 
   .poster {
@@ -65,4 +67,14 @@ $search-results-border-radius: $searcher-border-radius;
       overflow: hidden;
     }
   }
+}
+
+.no-results {
+  color: $color3;
+  margin: auto;
+  font-size: 1.3rem;
+  opacity: 0.8;
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
 }

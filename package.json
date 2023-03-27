@@ -9,6 +9,7 @@
     "lint-fix": "eslint **/*.js --fix --ignore-pattern node_modules/"
 
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vladyslav-spivakov/cinemate-project.git"

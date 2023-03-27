@@ -3,16 +3,34 @@
 @import "nav-block";
 @import "actors-block";
 @import "header";
+@import "horizontal-list";
 
 .film-info-section {
   max-width: 900px;
+  flex-grow: 1;
 }
 
 .main-block {
   @include flex-row;
   justify-content: center;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1080px) {
     @include flex-column;
+    .actors-block {
+        max-width: unset;
+        min-width: unset;
+        margin-top: 10px;
+        .block-title {
+          font-size: 1.8rem;
+        }
+        .actors {
+          gap: 40px;
+
+        }
+    }
   }
+}
+
+#similar {
+  margin-top: 10px;
 }

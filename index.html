@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
+    <div class="global-loader loading">
+      <div class="loader loading"></div>
+    </div>
     <header class="main-header">
       <div class="nav-header">
         <div class="logo-div">
@@ -23,107 +26,33 @@
     <div class="filmlist-block" id="trending">
         <div class="filmlist-title-div">
         <p class="filmlist-title">У тренді</p>
-        <label class="toggle-switch">
-            <input type="checkbox" />
+        <label class="toggle-switch" id="trending-switch">
+            <input type="checkbox" checked/>
             <span class="left">Сьогодні</span>
             <span class="right">Цього тижня</span>
         </label>
         </div>
-        <div class="horizontal-list">
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">
-                <a href="./movie.html" class=""> Reservior Dogs </a>
-            </p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
-        </div>
+        <div class="horizontal-wrapper">
+          <div class="horizontal-list">
+              
+          </div>
+        </div> 
     </div>
     <div class="filmlist-block" id="upcoming">
         <div class="filmlist-title-div">
         <label class="choice">
-            <input class="choice-checkbox"" type="checkbox"
-            name="upcoming-choice" id="">
-            <p class="filmlist-title choice-btn choice-1">Останні</p>
+            <input class="choice-checkbox" type="checkbox"
+            name="upcoming-choice" id="upcoming-choice">
+            <p class="filmlist-title choice-btn choice-1">Прем'єра</p>
             <p class="filmlist-title choice-btn choice-2">У кінотеатрах</p>
         </label>
         </div>
-        <div class="horizontal-list">
-        <div class="list-element">
-            <div class="poster">
-            <p class="title">Reservior Dogs</p>
-            <p class="subtitle">2022, Drama, Criminal</p>
-            <img src="img/poster.jpg" alt="" />
-            </div>
-        </div>
+        <div class="horizontal-wrapper">
+          <div class="horizontal-list">
+          </div>
         </div>
     </div>
     </div>
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

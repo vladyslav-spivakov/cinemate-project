@@ -18,7 +18,11 @@ export const newListElement = (title, year, genres, imgUrl, id) => {
         `;
     listElement.classList.add('list-element');
     listElement.getElementsByClassName('title')[0].addEventListener('click', () => {
-        if (listElement.matches(':hover')) window.location.href = `/movie.html?id=${id}`;
+        if (listElement.matches(':hover')) window.location.href = `./movie.html?id=${id}`;
     });
     return listElement;
+};
+
+export const redirectMain = () => {
+    window.location.href = './index.html';
 };

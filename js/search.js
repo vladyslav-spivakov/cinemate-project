@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const newSearchElement = (movie) => {
     const listElement = document.createElement('a');
-    listElement.setAttribute('href', `/movie.html?id=${movie.id}`);
+    listElement.setAttribute('href', `./movie.html?id=${movie.id}`);
     listElement.classList.add('list-element');
     listElement.innerHTML = `
             <div class="poster">

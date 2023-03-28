@@ -187,6 +187,7 @@ a {
   border-radius: 10px;
   margin: 10px;
   height: 280px;
+  overflow-y: hidden;
 }
 @media screen and (max-width: 480px) {
   .filmlist-block .filmlist-title-div {

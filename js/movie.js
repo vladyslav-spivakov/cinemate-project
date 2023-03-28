@@ -1,7 +1,7 @@
 import {
     genres, getCredits, getFilm, getSimilar, loadGenres, MovieAPI,
 } from './api.js';
-import { stopLoader, newListElement } from './global.js';
+import { stopLoader, newListElement, redirectMain } from './global.js';
 
 const filmGenres = document.getElementsByClassName('film-genres')[0];
 const actorsBlock = document.getElementsByClassName('actors')[0];
@@ -135,14 +135,14 @@ const setGeneralInfo = async (id) => {
         poster.setAttribute('src', MovieAPI.img400(data.poster_path));
 
         setFilmGenres(data.genres);
-    });
+    }).catch(() => { redirectMain(); });
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
     document.body.classList.remove('preload');
 
     const urlParams = new URLSearchParams(window.location.search);
-    if (!urlParams.has('id')) window.location.href = '/index.html';
+    if (!urlParams.has('id')) redirectMain();
     const id = urlParams.get('id');
     await loadGenres();
     await setGeneralInfo(id);

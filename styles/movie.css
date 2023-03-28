@@ -578,6 +578,7 @@ a {
   min-height: -moz-max-content;
   min-height: max-content;
   padding: 5px 0;
+  overflow-y: hidden;
 }
 .horizontal-list .list-element {
   display: flex;

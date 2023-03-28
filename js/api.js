@@ -23,7 +23,7 @@ export class MovieAPI {
 
     static getImgPath(size, imgPath) {
         if (imgPath) return `https://image.tmdb.org/t/p/${size}/${imgPath}`;
-        return '/img/poster.png';
+        return './img/poster.png';
     }
 
     static imgOriginal(imgPath) {

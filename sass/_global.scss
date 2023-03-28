@@ -312,6 +312,7 @@ $border-width: 2px;
     border-radius: $border-radius;
     margin: 10px;
     height: 280px;
+    overflow-y:hidden;
   }
 
   @media screen and (max-width: 480px) {

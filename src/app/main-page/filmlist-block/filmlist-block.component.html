@@ -1,0 +1,30 @@
+<div class="filmlist-block" id="trending" *ngIf="type === 'trending'; else checkUpcoming">
+    <app-filmlist-title titleText="У тренді">
+      
+        <app-toggle-switch 
+          leftChoice="Сьогодні"
+          rightChoice="Цього тижня"
+          (rightChosen)="updateList($event)"
+          
+        ></app-toggle-switch>
+      </app-filmlist-title>
+    <app-horizontal-list [movieList]="movieList" [loading]="loading"></app-horizontal-list>
+</div>
+
+<ng-template #checkUpcoming>
+  <div class="filmlist-block" id="upcoming" *ngIf="type === 'upcoming'; else invalidType">
+      <app-filmlist-title>
+        <app-multi-choice
+          leftChoice="Прем'єра"
+          rightChoice="У кінотеатрах"
+          (rightChosen)="updateList($event)"
+          ></app-multi-choice>
+      </app-filmlist-title>
+      <app-horizontal-list [movieList]="movieList" [loading]="loading"></app-horizontal-list>
+  </div>
+</ng-template>
+<ng-template #invalidType>
+<div class="filmlist-title-div">
+  <p class="filmlist-title"></p> 
+  </div>
+</ng-template> 

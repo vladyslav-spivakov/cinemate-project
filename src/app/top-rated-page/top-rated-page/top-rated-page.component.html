@@ -1,0 +1,21 @@
+<div class="filmlist-block" id="top-rated">
+    <app-filmlist-title titleText="Найкращі"></app-filmlist-title>
+    
+    <div class="top-rated-loader" *ngIf="loading">
+        <app-loader [size]="100"></app-loader>
+    </div>
+    <div class="fullpage-list" *ngIf="!loading">
+        <app-list-element *ngFor="let movie of topRatedList$ | async"
+            [genre_ids]="movie.genre_ids"
+            [id]="movie.id"
+            [title]="movie.title"
+            [posterPath]="movie.poster_path"
+            [releaseDate]="movie.release_date"
+            styleType="top-rated"
+        ></app-list-element>
+    </div>
+    <app-page-changer
+        [currPage]="currPage.value"
+        (newPage)="changePage($event)"
+    ></app-page-changer>
+</div>

@@ -1,0 +1,5 @@
+<label class="toggle-switch" id="trending-switch">
+    <input type="checkbox" [checked]="initialCheckedState" (change)="checkboxChange($event)"/>
+    <span class="left">{{ leftChoice }}</span>
+    <span class="right">{{ rightChoice }}</span>
+</label>

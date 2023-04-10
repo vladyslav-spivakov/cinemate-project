@@ -1,0 +1,11 @@
+@use "base/global" as *;
+
+
+.loader {
+    border: 10px solid $color3; 
+    border-top: 10px solid $color2;
+    border-radius: 50%;
+    &.loading {
+      animation: spin 2s linear infinite;
+    }
+  }

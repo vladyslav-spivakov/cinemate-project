@@ -1,0 +1,126 @@
+@use "./color" as *;
+ 
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@mixin exact-width($width) {
+    min-width: $width;
+    max-width: $width;
+  }
+  @mixin exact-height($height) {
+    min-height: $height;
+    max-height: $height;
+  }
+  
+  @mixin reset-intends {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  @mixin font-roboto {
+    font-family: "Roboto Slab", serif;
+  }
+  
+  @mixin parallelogram-bg($color) {
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      min-width: 100%;
+      min-height: 100%;
+      padding: 0px 4px;
+      top: -100%;
+      left: 50%;
+      z-index: -1;
+      background-color: $color;
+      transform: skew(-20deg) translate(-50%, 0);
+    }
+  }
+  
+  @mixin main-block-width {
+    max-width: min(1440px, 95vw);
+  }
+  
+  @mixin hover-underscore($color) {
+    &::after {
+      $transition-time: 0.2s 0.1s;
+      transition: color $transition-time, width $transition-time;
+      content: "";
+      background-color: $color;
+      display: block;
+      width: 0%;
+      margin: auto;
+      height: 3px;
+      position: relative;
+      top: 0;
+      transform: skew(-20deg);
+      z-index: -1;
+    }
+  
+    &:hover {
+      @include hover-underscore-show;
+    }
+  }
+  
+  @mixin hover-underscore-show($color: null) {
+    &::after {
+      width: 90%;
+      @if $color {
+        background-color: $color;
+      }
+    }
+  }
+  
+  @mixin hover-background($color) {
+    &:hover {
+      background-color: $color;
+    }
+  }
+  
+  @mixin hover-color($color) {
+    &:hover {
+      color: $color;
+    }
+  }
+
+  
+  @mixin hover-opacity($opacity) {
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+
+  @mixin show-scrollbar {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($color: $color2, $alpha: 0.8);
+    }
+    &::-webkit-scrollbar-track {
+      background-color: rgba($color: $color6, $alpha: 0.2);
+    }
+  }
+  
+  
+  @mixin poster-width($width) {
+    aspect-ratio: 2/3;
+    max-width: $width;
+    min-width: $width;
+    img {
+      aspect-ratio: inherit;
+      max-width: inherit;
+      min-width: inherit;
+    }
+  }
+  
+  @mixin box-shadow-1 {
+    box-shadow: 0px 0px 5px 3px rgba($color: #000000, $alpha: 0.3);
+  }

@@ -1,0 +1,84 @@
+@use "base/global" as *;
+
+$transition-time: 0.2s 0.05s;
+
+.list-element {
+    @include flex-column;
+
+    .title {
+      font-size: 1.05rem;
+      color: $color1;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: $color3;
+    }
+  }
+
+  .poster {
+
+    border-radius: $border-radius;
+    border: $border-width solid transparent;
+    transition: border $transition-time;
+    @include poster-width($poster-width);
+
+    &.top-rated {
+      @include poster-width(220px);
+
+    }
+    position: relative;
+
+    cursor: pointer;
+    .title,
+    .subtitle {
+      max-width: inherit;
+      position: absolute;
+      left: 50%;
+      width: max-content;
+      opacity: 0;
+      z-index: 1;
+      text-align: center;
+      max-width: 98%;
+      transition: all $transition-time;
+    }
+
+    .title {
+      transform: translate(-50%, -100%);
+      color: $color1;
+      top: 20%;
+      font-size: 0.9rem;
+      font-weight: 600;
+      pointer-events: none;
+    }
+    .subtitle {
+      transform: translate(-50%, 0%);
+      color: $color3;
+      font-size: 0.8rem;
+      top: 80%;
+    }
+
+    img {
+      transition: filter $transition-time;
+      border-radius: $border-radius;
+      @include box-shadow-1;
+    }
+
+    &:hover {
+      border: $border-width solid $color1;
+
+      img {
+        filter: brightness(18%);
+      }
+      .title,
+      .subtitle {
+        opacity: 1;
+      }
+
+      .title,
+      .subtitle {
+        pointer-events: all;
+        top: 49%;
+      }
+    }
+  }

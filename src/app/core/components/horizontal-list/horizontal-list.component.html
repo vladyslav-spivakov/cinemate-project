@@ -1,0 +1,15 @@
+<div class="horizontal-wrapper">
+    <div class="horizontal-list" *ngIf="!loading; else loader">
+        <app-list-element *ngFor="let movie of movieList | async"
+          [title]="movie.title"
+          [genre_ids]="movie.genre_ids"
+          [releaseDate]="movie.release_date"
+          [posterPath]="movie.poster_path"
+        ></app-list-element>
+    </div>
+    <ng-template #loader>
+      <div class="list-loader">
+        <app-loader [size]="100"></app-loader>
+      </div>
+    </ng-template>
+  </div> 

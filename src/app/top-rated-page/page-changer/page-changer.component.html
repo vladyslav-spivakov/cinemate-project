@@ -1,0 +1,13 @@
+<div class="filmlist-pages">
+    <div class="filmlist-page-btn left" (click)="handleLeftClick()">
+        <img src="assets/img/arrow.png" alt="" srcset="">
+    </div>
+    <div class="filmlist-page">
+        <input type="text" [value]="currPage" id="filmlist-page-value" placeholder="1.." 
+            (input)="handleInput($event)"
+        />
+    </div>
+    <div class="filmlist-page-btn right" (click)="handleRightClick()">
+        <img src="assets/img/arrow.png" alt="" srcset="">
+    </div>
+</div>

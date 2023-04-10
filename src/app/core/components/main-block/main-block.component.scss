@@ -1,0 +1,5 @@
+@use "base/global" as *;
+.main-block {
+    margin: $main-block-top-margin auto 10px auto;
+    @include main-block-width;
+  }

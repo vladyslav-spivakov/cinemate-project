@@ -27,7 +27,6 @@ export class ListElementComponent {
     this.backend.genres.subscribe((data : genreList)=>{this.genres = this.genre_ids.map((el)=>data[el])});
     
     this.subtitle = `${this.releaseDate && `${this.releaseDate.split('-')[0]},`} ${this.genres.join(', ')}`;
-    this.movieUrl = '/movie?id=' + this.id;
   }
 
   getPosterPath(imgPath : string) : string {

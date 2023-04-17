@@ -1,0 +1,39 @@
+@use "base/global" as *;
+#production {
+    flex-wrap: wrap;
+
+    .field-name {
+      display: none;
+      margin: 0 auto;
+    }
+  }
+
+  .film-field {
+    @include flex-row;
+    margin: 0;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+
+    .field-name {
+        min-width: 150px;
+        font-weight: 600;
+    }
+
+    .field-value {
+      font-size: 1rem;
+      text-align: center;
+    }
+}
+
+@media screen and (max-width:800px) {
+
+    .film-field {
+      justify-content: space-around;
+
+      .field-name {
+        min-width: unset;
+      }
+    }
+}

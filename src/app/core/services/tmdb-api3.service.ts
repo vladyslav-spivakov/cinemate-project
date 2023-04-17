@@ -30,7 +30,7 @@ export class MovieAPI {
 
     getImgPath(size : string | number, imgPath : string) {
         if (imgPath) return `https://image.tmdb.org/t/p/${size}/${imgPath}`;
-        return './img/poster.png';
+        return 'assets/img/poster.png';
     }
 
     imgOriginal(imgPath : string) {

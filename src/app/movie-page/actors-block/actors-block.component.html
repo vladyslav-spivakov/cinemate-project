@@ -1,0 +1,9 @@
+<div class="actors-block">
+    <p class="block-title">Актори</p>
+    <div class="actors">
+        <app-loader [size]="60" *ngIf="loading"></app-loader>
+        <ng-template [ngIf]="!loading">
+            <app-actor *ngFor="let actor of cast | async" [actor]="actor"></app-actor>
+        </ng-template>
+    </div>
+</div>

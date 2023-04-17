@@ -1,0 +1,24 @@
+@use "base/global" as *;
+
+
+.actor {
+    max-width: 100px;
+    min-width: 100px;
+
+    img {
+        max-width: inherit;
+        min-width: inherit;
+        aspect-ratio: 2/3;
+    }
+}
+
+.actor-name {
+color: $color0;
+
+    font-size: 1.1em;
+}
+.character-name {
+    color:$color3;
+    font-size: 0.8em;
+    text-overflow: ellipsis;
+}

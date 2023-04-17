@@ -1,0 +1,42 @@
+@use "base/global" as *;
+
+.actors-block {
+    max-width: 280px;
+    min-width: 240px;
+    margin-top: 50px;
+    margin-left: 10px;
+    .block-title {
+        color: $color2;
+        font-weight: 600;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    
+}
+
+
+.actors {
+    margin: 10px 10px 0 10px;
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+
+@media screen and (max-width: 1080px) {
+    .actors-block {
+        max-width: unset;
+        min-width: unset;
+        margin-top: 10px;
+        .block-title {
+          font-size: 1.8rem;
+        }
+        .actors {
+          gap: 40px;
+
+        }
+    }
+  }

@@ -1,6 +1,8 @@
 <div class="list-element">
     <div class="poster" [ngClass]="styleType">
-        <a [routerLink]="movieUrl"><p class="title">{{ title }}</p></a>
+        <a routerLink="/movie"
+        [queryParams]="{id:id}"
+        ><p class="title">{{ title }}</p></a>
         <p class="subtitle">{{ subtitle }}</p>
         <img [src]="getPosterPath(posterPath)" alt="" [ngStyle]="{ 
             'max-width': posterWidth,

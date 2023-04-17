@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { MainPageModule } from './main-page/main-page.module';
+import { MoviePageModule } from './movie-page/movie-page.module';
+import { SearchPageModule } from './search-page/search-page.module';
 import { TopRatedPageModule } from './top-rated-page/top-rated-page.module';
 
 @NgModule({
@@ -16,7 +18,9 @@ import { TopRatedPageModule } from './top-rated-page/top-rated-page.module';
     AppRoutingModule,
     CoreModule,
     MainPageModule,
-    TopRatedPageModule
+    TopRatedPageModule,
+    MoviePageModule,
+    SearchPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

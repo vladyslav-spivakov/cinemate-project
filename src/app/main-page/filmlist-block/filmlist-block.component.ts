@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { of, Observable } from 'rxjs';
-import { AppComponent } from 'src/app/app.component';
 import { Movie } from 'src/app/core/models/movie';
 import { BackendService } from 'src/app/core/services/backend.service';
 
@@ -11,6 +10,7 @@ import { BackendService } from 'src/app/core/services/backend.service';
 })
 export class FilmlistBlockComponent {
   @Input() type : string = '';
+  @Input() id : number = 0;
   loading : boolean = true;
   movieList : Observable<Movie[]> = new Observable<Movie[]>();
 
@@ -41,6 +41,13 @@ export class FilmlistBlockComponent {
       } else {
         this.load(this.backend.getUpcomingMovies('upcoming'));
       }
+    } 
+  }
+
+  ngOnInit() {
+    if(this.type === 'similar') {
+      this.load(this.backend.getSimilar(this.id));
     }
   }
+
 }

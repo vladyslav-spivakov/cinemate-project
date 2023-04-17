@@ -1,0 +1,16 @@
+<a class="search-element"
+    routerLink="/movie"
+    [queryParams]="{id:movie.id}"    
+>
+    <div class="poster"> 
+        <img [src]="api.img400(movie.poster_path)" [ngStyle]="imgLoading ? {display:'none'} : {}" (load)="handleImageLoading()"/>
+        <app-loader [size]=50 *ngIf="imgLoading"></app-loader>
+    </div>
+    <div class="details">
+        <p class="title">{{movie.title}}</p>
+        <p class="subtitle">{{subtitle}}</p>
+        <p class="description">
+            {{movie.overview}}
+        </p>
+    </div>
+</a>

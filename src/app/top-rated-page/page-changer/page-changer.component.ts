@@ -9,6 +9,8 @@ export class PageChangerComponent {
   @Input() currPage : number = 1;
 
   changeTimeout : any = undefined;
+  
+
 
   @Output() newPage = new EventEmitter<number>()
 
@@ -32,6 +34,7 @@ export class PageChangerComponent {
     if(this.changeTimeout) clearTimeout(this.changeTimeout)
     this.changeTimeout = setTimeout(()=> {
       event.target.blur();
+      event.target.value = this.currPage;
       this.emitNewPage(pageValue);
     }, 1000)
   }

@@ -1,0 +1,10 @@
+<div class="film-field" [id]="cssId">
+    <ng-template [ngIf]="values.length > 0 && values[0] != ''" [ngIfElse]="unknown">
+        <p class="field-value" *ngFor="let value of values">{{ value }}</p>
+    </ng-template>
+    <ng-template #unknown>
+        <p class="field-value">
+            <span style="opacity:0.75;">Невідомо</span>
+        </p>
+    </ng-template>
+</div>

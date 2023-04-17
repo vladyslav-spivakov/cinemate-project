@@ -1,0 +1,32 @@
+<div class="film-general">
+    <div class="poster">
+      <img [src]="posterPath" alt="" id="film-poster"/>
+    </div>
+    <div class="film-details">
+      <div class="film-title-div">
+        <p class="film-title">{{ movie.title }}</p>
+        <p class="rating"></p>
+      </div>
+      <div class="film-subtitle-div">
+        <p class="film-tagline">{{ movie.tagline }}</p>
+
+        <div class="film-genres">
+          <div class="film-genre" *ngFor="let i of genreList">{{ i }}</div>
+        </div>
+      </div>
+      <app-separator text="Кінокомпанії"></app-separator>
+      <app-film-field [values]="productionCompanies" cssId='production'></app-film-field>
+      <app-separator text="Бюджет"></app-separator>
+      <app-film-field [values]="[budget]"></app-film-field>
+      <app-separator text="Дохід"></app-separator>
+      <app-film-field [values]="[revenue]"></app-film-field>
+      <app-separator text="Опис"></app-separator>
+      <p class="description" id="description" *ngIf="description != ''; else unknownDescription">
+        {{ description }}
+      </p>
+      <ng-template #unknownDescription>
+        <span style="opacity:0.75;">Невідомо</span>
+      </ng-template>
+      <app-separator [last]=true></app-separator>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+@use "base/global" as *;
+
+.separator {
+    margin: 15px 0px;
+    
+    @include exact-height(0.5px);
+    @include exact-width(100%);
+    border-radius: 10px;
+    background-color: $color2;
+    position: relative;
+
+    p {
+      position: absolute;
+      top:0;
+      transform: translate(0%, -60%);
+      background-color: $color5;
+      color: rgba($color: $color2, $alpha: 0.8);
+      left: 10px;
+      font-weight: 500;
+      font-size: 1.05rem;
+      line-height: 1rem;
+    }
+
+    &.last {
+        margin-top: auto;
+        margin-bottom: 10px;
+    }
+  }

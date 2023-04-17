@@ -1,0 +1,9 @@
+<div class="search-block">
+    <app-searcher (onInput)="handleInput($event)"></app-searcher>
+</div>
+<div class="search-results">
+    <span class="no-results" *ngIf="status==='no-results'">Немає результатів за "{{query}}"</span>
+    <span class="no-results" *ngIf="status==='no-query'">Немає результатів. Введіть назву у стрічку пошуку</span>
+    <span class="no-results" *ngIf="status==='wait'" #statusWaitSpan>Пошук...</span>
+    <app-search-element *ngFor="let movie of searchResults$ | async" [movie]="movie"></app-search-element>
+</div>

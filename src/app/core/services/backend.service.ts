@@ -59,8 +59,8 @@ export class BackendService {
         return this.apiFetch(endpoint);
     };
     
-    async getCredits(movieId : string)  {
-        this.apiFetch( this.urls.credits(movieId));
+    async getCredits(movieId : string | number)  {
+        return this.apiFetch(this.urls.credits(movieId));
     }
     
     async getSimilar(movieId : string | number)  {

@@ -14,6 +14,7 @@ import { MultiChoiceComponent } from './multi-choice/multi-choice.component';
     FilmlistBlockComponent,
     MainPageComponent,
     ToggleSwitchComponent,
+    FilmlistBlockComponent,
     MultiChoiceComponent
   ],
   imports: [
@@ -21,7 +22,8 @@ import { MultiChoiceComponent } from './multi-choice/multi-choice.component';
     CoreModule
   ],
   exports: [
-    MainPageComponent
+    MainPageComponent,
+    FilmlistBlockComponent
   ]
 })
 export class MainPageModule { }

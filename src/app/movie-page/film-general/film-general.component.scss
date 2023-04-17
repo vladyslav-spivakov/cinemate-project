@@ -1,0 +1,96 @@
+@use "base/global" as *;
+
+.film-general {
+    @include flex-row;
+    align-items: center;
+  
+    .poster img {
+      @include poster-width(225px);
+    }
+  
+    color: $color3;
+  }
+  
+  .film-details {
+    @include flex-column;
+    flex-grow: 1;
+    margin-left: 10px;
+  
+    .film-title-div {
+      @include flex-row;
+      align-items: center;
+    }
+  
+    .film-title {
+      font-size: 1.9rem;
+      color: $color2;
+      font-weight: 600;
+    }
+    .film-tagline {
+      font-size: 1.1rem;
+    }
+  
+    .film-subtitle-div {
+      @include flex-row;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      align-items: center;
+    }
+  
+    .description {
+      margin: 5px;
+    }
+  
+    
+  }
+  
+  
+  .film-genres {
+    @include flex-row;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 5px;
+    gap:3px;
+  }
+  
+  .film-genre {
+      cursor: pointer;
+      padding: 3px 5px;
+      color: $color1;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  
+      $transition-time: 0.2s;
+      transition: background-color $transition-time, opacity $transition-time;
+      @include parallelogram-bg(rgba($color4,0.2));
+  
+      &::after {
+          transition: background-color $transition-time, opacity $transition-time;
+  
+      }
+  
+      // &:hover::after {
+      //   background-color: $color2;
+      // }
+  }
+  
+  
+  @media screen and (max-width:800px) {
+  
+      .film-general {
+        @include flex-column;
+  
+        .poster {
+          align-self: center;
+          
+        }
+      }
+
+      .film-details {
+        text-align: center;
+  
+        .description {
+          text-align: start;
+        }
+      }
+  }

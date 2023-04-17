@@ -1,0 +1,17 @@
+<div class="movie-page-block">
+  <div class="film-info-section">
+      <div class="film-info-block">
+        <ng-template [ngIf]="!loading">
+          <app-film-general [movie]="movie"></app-film-general>
+          <app-filmlist-block type="similar" [id]="movie.id"></app-filmlist-block>
+        </ng-template>
+        <ng-template [ngIf]="loading">
+          <div class="movie-page-loader">
+            <app-loader [size]="100"></app-loader>
+          </div>
+        </ng-template>
+      </div>
+
+  </div>
+  <app-actors-block [id]="movie.id" [ngStyle]="loading ? {display : 'none'} : {}"></app-actors-block>
+</div>

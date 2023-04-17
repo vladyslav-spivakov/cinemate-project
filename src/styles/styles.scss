@@ -50,12 +50,7 @@ a {
     all:unset;
 }
 
-.separator {
-  @include exact-height(0.5px);
-  @include exact-width(100%);
-  border-radius: 10px;
-  background-color: $color2;
-}
+
 
 
 ::-webkit-scrollbar {

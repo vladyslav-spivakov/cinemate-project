@@ -1,0 +1,69 @@
+@use "base/global" as *;
+
+.search-element {
+    @include flex-row;
+    background-color: rgba($color3, 0.4);
+    border-radius: $search-results-border-radius;
+    max-height: min-content;
+    @include box-shadow-1;
+    cursor: pointer;
+    @include hover-background(rgba($color2,0.4));
+
+
+  .poster {
+    border-radius: inherit;
+    align-self: center;
+    display: flex;
+    * {
+      align-self: center;
+      margin: auto;
+    }
+    @include poster-width(120px);
+
+    img {
+      border-radius: inherit;
+    }
+  }
+
+  .details {
+    @include flex-column;
+    margin-left: 5px;
+    min-height: 100%;
+  }
+
+  .title {
+    justify-self: flex-start;
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+  .description {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @media screen and (max-width: 800px) {
+    .poster img {
+      max-width: 100px;
+    }
+    .details {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .title {
+      font-size: 1.2rem;
+    }
+    .subtitle {
+      font-size: 0.8rem;
+    }
+    .description {
+      font-size: 0.7rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+    }
+  }
+}

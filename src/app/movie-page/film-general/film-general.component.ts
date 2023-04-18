@@ -32,13 +32,15 @@ export class FilmGeneralComponent {
 
   ngOnChanges(changes : SimpleChanges) {
     if('movie' in changes ) {
+      if(this.movie) {
+        console.log(this.movie);
       this.productionCompanies = this.movie.production_companies.map(el=>el.name);
       this.budget = this.convertMoney(this.movie.budget);
       this.revenue = this.convertMoney(this.movie.revenue);
       this.description = this.movie.overview;
       this.posterPath = this.api.imgOriginal(this.movie.poster_path);
       this.genreList = this.movie.genres.map(el=>el.name);
-
+      }
     }
   }
 }

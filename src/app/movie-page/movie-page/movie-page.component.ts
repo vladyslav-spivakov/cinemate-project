@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ResolvedReflectiveFactory } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from 'src/app/core/models/movie';
 import { BackendService } from 'src/app/core/services/backend.service';
@@ -20,10 +20,13 @@ export class MoviePageComponent {
         this.loading = true;
         if(consistId) {
           this.backend.getFilm(params.id).then(res=>{
+            if('success' in res && res.success == false) this.router.navigate(['/not-found']);
             this.movie = res;
             this.loading = false;
           }
-          )
+          ).catch(()=>{
+            this.router.navigate(['/']);
+          })
         } else {
           this.router.navigate(['/not-found']);
         }

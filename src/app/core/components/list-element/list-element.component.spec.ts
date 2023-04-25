@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BackendService } from '../../services/backend.service';
+import { MovieAPI } from '../../services/tmdb-api3.service';
 
 import { ListElementComponent } from './list-element.component';
 
@@ -8,10 +10,10 @@ describe('ListElementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListElementComponent ]
+      declarations: [ ListElementComponent ],
+      providers:[BackendService, MovieAPI]
     })
     .compileComponents();
-
     fixture = TestBed.createComponent(ListElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

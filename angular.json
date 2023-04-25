@@ -99,9 +99,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/_global.scss"
+              "src/styles/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
+            "scripts": [],
+            "karmaConfig": "karma.conf.js",
+            "codeCoverage": true
           }
         }
       }

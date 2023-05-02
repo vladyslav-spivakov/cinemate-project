@@ -17,7 +17,7 @@ export class FilmlistBlockComponent {
   constructor(private backend : BackendService) {}
 
   load(promise : Promise<any>) {
-    promise.then(
+    promise?.then(
       (data) => {
         this.movieList = of([...data.results]);
         this.loading = false; 
@@ -31,7 +31,7 @@ export class FilmlistBlockComponent {
     this.loading=true;
     if (this.type === 'trending') {
       if(event) {
-        this.load(this.backend.getTrendingMovies('day'));
+        this.load(this.backend.getTrendingMovies('day2'));
       } else {
         this.load(this.backend.getTrendingMovies('week'));
       }

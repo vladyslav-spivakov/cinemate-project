@@ -22,11 +22,13 @@ export class ActorsBlockComponent {
 
 
   ngOnChanges(changes : SimpleChanges) {
+  
     if('id' in changes && !changes['id'].firstChange) {
       this.backend.getCredits(changes['id'].currentValue).then(
         (res:{cast:Actor[]})=>{
           this.cast = of(res.cast.splice(0,6));
           this.loading=false;
+
         }
       )
     }

@@ -28,7 +28,7 @@ export class PageChangerComponent {
   handleInput(event : any) {
     event.target.value = event.target.value.replaceAll(/[^0-9]*/g, '');
     event.target.value = event.target.value.replaceAll(/(0*)(([1-9][0-9]*)*)/g,'$2')
-    if(event.target.value === '') event.target.value = '0';
+    if(event.target.value === '') event.target.value = '1';
     let pageValue : number = parseInt(event.target.value);
     if( pageValue === this.currPage) return;
     if(this.changeTimeout) clearTimeout(this.changeTimeout)
@@ -36,7 +36,7 @@ export class PageChangerComponent {
       event.target.blur();
       event.target.value = this.currPage;
       this.emitNewPage(pageValue);
-    }, 1000)
+    }, 1000);
   }
 
   ngOnChanges(changes : SimpleChanges) {

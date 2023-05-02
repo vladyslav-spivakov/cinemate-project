@@ -13,7 +13,6 @@ export class ToggleSwitchComponent {
 
   checkboxChange(event : any) {
     this.rightChosen.emit(event.target.checked);
-    console.log(this.rightChosen);
   }
 
   ngOnInit() {

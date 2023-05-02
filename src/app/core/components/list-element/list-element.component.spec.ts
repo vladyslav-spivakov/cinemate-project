@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CoreModule } from '../../core.module';
 import { BackendService } from '../../services/backend.service';
 import { MovieAPI } from '../../services/tmdb-api3.service';
 
@@ -10,6 +11,7 @@ describe('ListElementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [CoreModule],
       declarations: [ ListElementComponent ],
       providers:[BackendService, MovieAPI]
     })

@@ -13,7 +13,7 @@ export class BackendService {
         this.loadGenres();
     }
 
-    private async apiFetch(URL : string) {
+    public async apiFetch(URL : string) {
         const request = await fetch(URL, {
             method: 'GET',
             headers: {
@@ -39,7 +39,7 @@ export class BackendService {
                 });
                 this.genres.next(genres);
             },
-        );
+        ); 
     };
     
 

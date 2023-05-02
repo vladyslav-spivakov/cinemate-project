@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CoreModule } from 'src/app/core/core.module';
+import { MainPageModule } from '../main-page.module';
 
 import { MainPageComponent } from './main-page.component';
 
@@ -8,6 +10,7 @@ describe('MainPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ CoreModule, MainPageModule],
       declarations: [ MainPageComponent ]
     })
     .compileComponents();

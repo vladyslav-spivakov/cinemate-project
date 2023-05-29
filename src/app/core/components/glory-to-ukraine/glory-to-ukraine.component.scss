@@ -1,0 +1,59 @@
+.glory-to-ukraine-btn {
+  $h-btn: 1rem;
+  $w-btn: 160px;
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  height: $h-btn*3;
+  margin-top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+  width: $w-btn;
+  text-align: center;
+  color: white;
+  line-height: $h-btn*1.8 ;
+  letter-spacing: 2px;
+  font-weight: 400;
+  vertical-align: middle;
+  z-index: 100;
+  &:before, &:after {
+    display:block;
+    position: absolute;
+    width: $w-btn;
+    height: $h-btn;
+    content: '';
+    z-index: -1;
+    transition: background-color 0.5s;
+  }
+  &:before {
+    background-color: rgb(181, 0, 0);
+    border-radius: 5px 5px 0 0;
+    content: 'Слава Україні';
+    z-index: 1;
+    
+  }
+  &:after {
+    background-color: rgb(0, 0, 0);
+    top: $h-btn;
+    border-radius: 0 0 5px 5px;
+
+  }
+  &:hover,&.disabled { 
+    color: rgb(21, 21, 21);
+    font-weight: 500;
+    &::before {
+      background-color: rgb(36, 106, 255);
+      content: 'Героям слава';
+    
+    }
+    &::after {
+      background-color: rgb(229, 217, 0);
+
+    }
+  }
+  &.disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+}

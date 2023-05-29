@@ -31,7 +31,7 @@ export class FilmlistBlockComponent {
     this.loading=true;
     if (this.type === 'trending') {
       if(event) {
-        this.load(this.backend.getTrendingMovies('day2'));
+        this.load(this.backend.getTrendingMovies('day'));
       } else {
         this.load(this.backend.getTrendingMovies('week'));
       }

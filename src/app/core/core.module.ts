@@ -9,6 +9,8 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { AppRoutingModule } from '../app-routing.module';
 import { FilmlistTitleComponent } from './components/filmlist-title/filmlist-title.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { GloryToUkraineComponent } from './components/glory-to-ukraine/glory-to-ukraine.component';
+import { GloryMessageComponent } from './components/glory-message/glory-message.component';
 
 
 
@@ -20,7 +22,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     ListElementComponent,
     NotFoundPageComponent,
     FilmlistTitleComponent,
-    LoaderComponent
+    LoaderComponent,
+    GloryToUkraineComponent,
+    GloryMessageComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +37,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     HorizontalListComponent,
     FilmlistTitleComponent,
     ListElementComponent,
-    LoaderComponent
+    LoaderComponent,
+    GloryToUkraineComponent,
+    GloryMessageComponent
   ]
 })
 export class CoreModule { }

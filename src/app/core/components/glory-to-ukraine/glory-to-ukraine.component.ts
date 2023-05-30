@@ -14,8 +14,7 @@ export class GloryToUkraineComponent {
   }
 
   handleClick() {
-    console.log('sent')
-    this.gloryService.sendMessage({'name':'Ukraine'});
+    this.gloryService.slavaUkraini('Слава Україні!');
   }
 
 }

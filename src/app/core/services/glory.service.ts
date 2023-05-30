@@ -17,21 +17,17 @@ export class GloryService {
   }
 
 
-  sendMessage(message : any) {
+  slavaUkraini(message : any) {
     if(!this.cooldown) { 
       this.cooldown = true;
       setTimeout(()=>{
         this.cooldown = false;
       },4000)
       if(!this.socket || this.socket.closed) {
-        this.newConnection
+        this.newConnection()
       }
       if(this.socket && !this.socket.closed) this.socket.next(message);
     }
   }
 
-  
-  ngOnDestroy() {
-    this.socket.complete();
-  }
 }

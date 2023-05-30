@@ -9,6 +9,7 @@ import { GloryService } from '../../services/glory.service';
 })
 export class GloryMessageComponent {
   public currentClass : string = "";
+  public currentMessage : string = "Слава Україні!"
   public multiplier : number = 1;
   private hideTimeout : any = undefined;
   constructor(private gloryService:GloryService) {
@@ -37,6 +38,7 @@ export class GloryMessageComponent {
   ngOnInit() {
     this.gloryService.socket.subscribe((data:any)=>{
         this.setShowClass();
+        this.currentMessage = data;
     })
   }
 }

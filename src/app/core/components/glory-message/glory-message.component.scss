@@ -1,12 +1,14 @@
 .glory-message {
   position: fixed;
-  min-height: 3rem;
+  // min-height: 1.rem;
   color: white;
   z-index: 100;
   transition: all 0.3s;
-  bottom: 0;
+  bottom: 10px;
   opacity: 0;
   text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  padding: 2px;
+  background-color: rgba(0,0,0,0.5);
   &.show {
     opacity: 1;
     transition: all 0.5s;
